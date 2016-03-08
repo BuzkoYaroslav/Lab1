@@ -4,3 +4,4 @@ C:\Users\Ярослав\Desktop\Labs\CSharp_1\Lab1\Lab1\bin\Debug\Lab1.pdb
 C:\Users\Ярослав\Desktop\Labs\CSharp_1\Lab1\Lab1\obj\Debug\Lab1.csprojResolveAssemblyReference.cache
 C:\Users\Ярослав\Desktop\Labs\CSharp_1\Lab1\Lab1\obj\Debug\Lab1.exe
 C:\Users\Ярослав\Desktop\Labs\CSharp_1\Lab1\Lab1\obj\Debug\Lab1.pdb
+F:\git_laba\Lab1\Lab1\Lab1\bin\Debug\Lab1.exe.config
