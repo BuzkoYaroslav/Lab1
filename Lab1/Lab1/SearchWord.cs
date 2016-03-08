@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Lab1
 {
@@ -15,6 +16,37 @@ namespace Lab1
         public string filter { get; private set; }
 
 
+        private void ReadAllSentences()
+        {
+            StreamReader strRead = new StreamReader(fileName);
+            string currentSentence = null;
+            string buffer;
+            while (!strRead.EndOfStream)
+            {
+                buffer = strRead.ReadLine();
+                while (buffer.IndexOf(spliter) != -1)
+                {
+                    currentSentence += buffer.Substring(0, buffer.IndexOf(spliter) + 1);
+                    buffer = buffer.Substring(buffer.IndexOf(spliter) + 1);
+                    buffer = buffer.TrimStart();
+                    allSentences.Add(currentSentence);
+                    currentSentence = null;
+                }
+                currentSentence = buffer;
+            }
+            if (allSentences == null)
+                throw new Exception("File has no sentence!");
+        }
+        private void SearchSentences()
+        {
+            foreach (string sentece in allSentences)
+            {
+                if (sentece.ToLower().Contains(filter))
+                {
+                    filteredSentences.Add((string)sentece.Clone());
+                }
+            }
+        }
         private void WriteSeveralSentences(List<string> sentences)
         {
             foreach (string sentence in sentences)
